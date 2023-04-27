@@ -11,6 +11,9 @@ module.exports = {
     fontFamily: {
       primaryFont: 'Montserrat',
       secondFont: 'iCielKoni'
+    },
+    boxShadow: {
+      primaryShadow: '-1px 3px 3px 0px rgba(178, 91, 11, 0.5) inset'
     }
   },
   plugins: []

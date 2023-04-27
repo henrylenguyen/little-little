@@ -1,20 +1,38 @@
-import React from "react";
-import Select from "react-select";
-import { useController } from "react-hook-form";
+import React from 'react'
+import Select from 'react-select'
+import { useController } from 'react-hook-form'
+import { IControl } from 'constants/interfaces/control.interface'
 
-const Dropdown = ({ control, name, options, ...props }) => {
+interface IDropdown extends IControl {
+  options: {
+    label: string
+    value: string
+  }[]
+  defaultValue?: {
+    label: string
+    value: string
+  }
+  SelectOption?: (selectedOption: any) => void
+}
+
+const Dropdown: React.FC<IDropdown> = ({ control, name, options, ...props }) => {
   const {
-    field: { value, onChange },
+    field: { value, onChange }
   } = useController({
     control,
     name,
-    defaultValue: props.defaultValue || null,
-  });
+    defaultValue: props.defaultValue
+      ? {
+          label: props.defaultValue.label,
+          value: props.defaultValue.value
+        }
+      : null
+  })
 
   const selectOptions = options.map((option) => ({
     label: option.label,
-    value: option.value,
-  }));
+    value: option.value
+  }))
 
   return (
     <Select
@@ -25,15 +43,13 @@ const Dropdown = ({ control, name, options, ...props }) => {
         ) || null // Trả về null nếu không tìm thấy giá trị phù hợp
       }
       onChange={(selectedOption) => {
-        onChange(selectedOption.value);
-        if (props.Select) props.Select(selectedOption);
+        onChange(selectedOption?.value)
+        if (props.SelectOption) props.SelectOption(selectedOption)
       }}
       {...props}
-      className={`${
-        props.errors ? "border border-red-500" : "border border-gray-300"
-      } focus:outline-none focus:border-blue-400  focus:ring-2 focus:ring-blue-400 block w-full rounded-md  mt-2 text-black`}
+      className={`${props.errors ? 'border-red-500 border' : 'border-gray-300 border'} ${props.className} border-none`}
     />
-  );
-};
+  )
+}
 
-export default Dropdown;
+export default Dropdown
