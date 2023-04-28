@@ -3,7 +3,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import Dropdown from '../select/Dropdown'
 import DateTimePickerField from '../datetime/DateTimePickerField'
 
-const Form = ({ schema, fields, handleSubmitForm, title, initialValues, color = 'text-gray-700', ...rest }) => {
+const Form = ({ schema, fields, handleSubmitForm, title, initialValues, gap, color = 'text-gray-700', ...rest }) => {
   const {
     control,
     handleSubmit,
@@ -30,13 +30,10 @@ const Form = ({ schema, fields, handleSubmitForm, title, initialValues, color = 
   return (
     <>
       <h3 className='text-center text-[30px] font-semibold uppercase'>{title}</h3>
-      <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-2'>
+      <form onSubmit={handleSubmit(onSubmit)} className={`mt-2 grid grid-cols-3 `} style={{ gap: gap }}>
         {newFields?.length > 0
-          ? newFields?.map(({ label, name, type, placeholder, onChange, ...rest }) => (
+          ? newFields?.map(({ name, type, placeholder, onChange, ...rest }) => (
               <div key={name} className='flex flex-col gap-3'>
-                <label className={`block font-medium ${color}`} htmlFor={name}>
-                  {label}
-                </label>
                 {type === 'select' ? (
                   <Dropdown
                     control={control}
@@ -73,11 +70,8 @@ const Form = ({ schema, fields, handleSubmitForm, title, initialValues, color = 
                 {errors[name] && <span className='text-red-500 text-sm italic'>{errors[name]?.message}</span>}
               </div>
             ))
-          : fields?.map(({ label, name, type, placeholder, onChange, className, ...rest }) => (
-              <div key={name} className='flex flex-col gap-3'>
-                <label className={`block font-medium ${color}`} htmlFor={name}>
-                  {label}
-                </label>
+          : fields?.map(({ name, type, placeholder, onChange, className, ...rest }) => (
+              <div key={name} className={rest?.classNameDiv}>
                 {type === 'select' ? (
                   onChange ? (
                     <Dropdown
@@ -109,6 +103,25 @@ const Form = ({ schema, fields, handleSubmitForm, title, initialValues, color = 
                     type='datetime'
                     defaultValue={rest.value}
                   />
+                ) : type === 'number' ? (
+                  <input
+                    type={type}
+                    placeholder={placeholder}
+                    {...register(name)}
+                    name={name}
+                    className={`${errors[name] ? 'border-red-500 border ' : ''} ${className} `}
+                    min={0}
+                    max={1}
+                  />
+                ) : type === 'textarea' ? (
+                  <textarea
+                    type={type}
+                    placeholder={placeholder}
+                    {...register(name)}
+                    name={name}
+                    className={`${errors[name] ? 'border-red-500 border ' : ''} ${className} `}
+                    rows={2}
+                  />
                 ) : (
                   <input
                     type={type}
@@ -122,11 +135,8 @@ const Form = ({ schema, fields, handleSubmitForm, title, initialValues, color = 
                 {errors[name] && <span className='text-red-500 text-sm italic'>{errors[name].message}</span>}
               </div>
             ))}
-        <div className='mt-2 text-center '>
-          <button
-            type='submit'
-            className='button shadow-2xl w-[300px] rounded-2xl bg-buttonColor p-[10px] font-secondFont text-[20px] font-[900] text-textSecondColor'
-          >
+        <div className='col-span-3 text-center '>
+          <button type='submit' className='btnPrimary w-[300px]  rounded-2xl p-[10px] text-[20px] shadow-secondShadow'>
             {rest?.titleButton}
           </button>
         </div>

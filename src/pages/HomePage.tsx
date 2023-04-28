@@ -42,7 +42,7 @@ const HomePage: React.FC<IProps> = () => {
               velit qui, libero praesentium ut voluptate, unde vero eum modi tempore!
             </p>
             <img src={Lisa} alt='' className='absolute bottom-[-10%] left-[-5%] w-[200px]' />
-            <img src={ballon4} alt='' className='absolute -bottom-[20%] -translate-x-1/2 left-1/2 z-[-1]' />
+            <img src={ballon4} alt='' className='absolute -bottom-[20%] left-1/2 z-[-1] -translate-x-1/2' />
           </div>
         }
         contentRight={
@@ -55,6 +55,7 @@ const HomePage: React.FC<IProps> = () => {
               color='text-white'
               handleSubmitForm={handleSubmitForm}
               initialValues={undefined}
+              gap={'10px 20px'}
             />
             <img src={ballon5} alt='' className='absolute right-[-17%] top-[10%] z-[-1] w-[100px] object-contain' />
             <img src={ballon3} alt='' className='absolute bottom-[-10%] right-[-15%] z-[-1] w-[100px] object-contain' />

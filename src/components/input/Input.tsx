@@ -13,7 +13,7 @@ const Input: React.FC<IInput> = ({ control, isUpdate, className, name, ...props 
   })
   return (
     <input
-      className={`w-full px-5 py-3 text-[18px] ${className} ${isUpdate ? 'bg-gray-800' : 'bg-transparent'}`}
+      className={` px-5 py-3 text-[18px] ${className} ${isUpdate ? 'bg-gray-800' : 'bg-transparent'}`}
       {...field}
       {...props}
     />

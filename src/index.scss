@@ -49,12 +49,14 @@ button {
     background: radial-gradient(97.91% 60.14% at 50% 50%, #ffdb7e 0%, #ff7a00 100%);
   }
 }
+.btnPrimary {
+  @apply  bg-buttonColor font-secondFont  font-[900] text-textSecondColor text-center cursor-pointer;
+}
 .navbar {
   position: relative;
   clip-path: polygon(50% 0%, 100% 0, 100% 80%, 70% 100%, 30% 100%, 0 80%, 0 0);
 
   // filter: drop-shadow(0px 4px 35px rgba(161, 58, 0, 0.75));
-  
 }
 .border-nav {
   border: 1px solid transparent;
@@ -62,15 +64,12 @@ button {
 .container-layout {
   background-image: url(assets/images/bg.png);
 }
-.button{
-  box-shadow: 0px 10px 0px 0px rgba(189, 0, 11, 1);
-;
-}
+
 .css-b62m3t-container {
-   background: white
+  background: white;
 }
-.css-13cymwt-control{
-  border: none!important
+.css-13cymwt-control {
+  border: none !important;
 }
 /* cho Chrome, Safari và Opera */
 ::-webkit-scrollbar {
@@ -82,7 +81,7 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #ED7200;
+  background-color: #ed7200;
   border-radius: 5px;
 }
 
@@ -99,7 +98,7 @@ button {
 }
 
 ::-ms-thumb {
-    background-color: #ED7200;
+  background-color: #ed7200;
   border-radius: 5px;
 }
 
@@ -107,3 +106,9 @@ button {
   background-color: #e49f0c;
 }
 
+.my-text::nth-of-type(5) {
+  text-indent: 100px;
+}
+.title{
+  @apply text-center font-secondFont text-[72px] font-[900] leading-[80px] text-textSecondColor 
+}

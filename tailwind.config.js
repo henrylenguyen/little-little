@@ -13,7 +13,9 @@ module.exports = {
       secondFont: 'iCielKoni'
     },
     boxShadow: {
-      primaryShadow: '-1px 3px 3px 0px rgba(178, 91, 11, 0.5) inset'
+      primaryShadow: '-1px 3px 3px 0px rgba(178, 91, 11, 0.5) inset',
+      secondShadow: '0px 10px 0px 0px rgba(189, 0, 11, 1)',
+      secondShadow_1: '0px 5px 0px 0px rgba(189, 0, 11, 1)'
     }
   },
   plugins: []

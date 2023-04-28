@@ -9,7 +9,7 @@ const ContainerLayout: React.FC<Props> = (props) => {
     <div className='hidden md:block'>
       <Navigation></Navigation>
       <div className='container mx-auto '>
-        <div className=' container-layout  mt-[-2%] rounded-b-[40px] px-10 pt-[5%]'>
+        <div className=' container-layout  mt-[-2%] min-h-[800px] rounded-b-[40px] px-10 pt-[5%]'>
           <Outlet></Outlet>
         </div>
       </div>
