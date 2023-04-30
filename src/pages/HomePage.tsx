@@ -32,14 +32,17 @@ const HomePage: React.FC<IProps> = () => {
         labelContentRight='vé của bạn'
         contentLeft={
           <div>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt molestiae temporibus quasi repellendus
-              in eaque libero corrupti maiores neque velit quae magni voluptate dolores tenetur doloremque tempora
-              dolorum=========ơ nostrum enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eius
-              cupiditate, eum inventore excepturi voluptates? Amet velit, voluptate repudiandae, incidunt reiciendis
-              architecto, odit hic aliquid laudantium earum vitae commodi rerum? Lorem ipsum dolor sit, amet consectetur
-              adipisicing elit. Necessitatibus rem porro fuga, at voluptas recusandae alias facilis deserunt tempora
-              velit qui, libero praesentium ut voluptate, unde vero eum modi tempore!
+            <p className='row-span-2'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac mollis justo. Etiam volutpat
+              tellus quis risus volutpat, ut posuere ex facilisis. Suspendisse iaculis libero lobortis condimentum
+              gravida. Aenean auctor iaculis risus, lobortis molestie lectus consequat a. Lorem ipsum dolor sit amet
+              consectetur, adipisicing elit. Nemo soluta nesciunt porro. Ea vero asperiores officia, libero minus harum
+              possimus consequatur repudiandae nesciunt, eaque consectetur totam sapiente ducimus. Aliquam, repellat!
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac mollis justo. Etiam volutpat
+              tellus quis risus volutpat, ut posuere ex facilisis. Suspendisse iaculis libero lobortis condimentum
+              gravida. Aenean auctor iaculis risus, lobortis molestie lectus consequat a. Lorem ipsum dolor sit amet
+              consectetur, adipisicing elit. Nemo soluta nesciunt porro. Ea vero asperiores officia, libero minus harum
+              possimus consequatur repudiandae nesciunt, eaque consectetur totam sapiente ducimus. Aliquam, repellat!
             </p>
             <img src={Lisa} alt='' className='absolute bottom-[-10%] left-[-5%] w-[200px]' />
             <img src={ballon4} alt='' className='absolute -bottom-[20%] left-1/2 z-[-1] -translate-x-1/2' />

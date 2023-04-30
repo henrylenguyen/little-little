@@ -12,7 +12,7 @@ const Label = ({ labelImage, labelContent, fontSize }: Props) => {
     <>
       {labelImage && (
         <div className='absolute left-1/2 top-[3%] -translate-x-1/2 -translate-y-1/2'>
-          <img src={LableImage} alt='label' />
+          <img src={LableImage} alt='label' className='min-w-[300px]'/>
           <span
             className={`absolute left-1/2 top-[70%] inline-block h-full w-full -translate-x-1/2 -translate-y-1/2  text-center text-[${fontSize}] font-secondFont font-[900] uppercase text-textSecondColor`}
           >

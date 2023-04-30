@@ -1,13 +1,11 @@
-import formLeft from 'assets/images/Group (1).png'
 import Label from 'components/label/Label'
 import { IPropsForm } from 'constants/interfaces/formInterface'
+import ContainerForm from '../../components/ContainerForm'
 
 const FormLeft = ({ children, LabelImage, labelContent }: IPropsForm) => {
   return (
-    <div className='form-left relative z-[9999] col-span-3 '>
-      <img src={formLeft} className='z-[-1] h-auto min-h-[520px] w-full' alt='' />
-
-      <div className={'absolute top-0 min-h-[520px] p-14'}>{children}</div>
+    <div className='form-left relative z-[9999] col-span-3 h-full'>
+      <ContainerForm>{children}</ContainerForm>
       <Label labelImage={LabelImage} labelContent={labelContent} fontSize='28px'></Label>
     </div>
   )

@@ -29,10 +29,12 @@ const Navigation = (props: Props) => {
     'px-[24px] transition border py-[10px] text-[18px] font-[700] leading-[22px] text-textSecondColor rounded-[30px]'
   return (
     <div className='navbar relative w-full bg-[#ED7200] '>
-      <div className=' w-full py-5 shadow-2xl'>
+      <div className=' shadow-2xl w-full py-5'>
         <div className='container flex items-center justify-around'>
           <div className='logo'>
-            <img src={logo} className='w-[120px]' alt='logo' />
+            <NavLink to={'/'}>
+              <img src={logo} className='w-[120px] cursor-pointer' alt='logo' />
+            </NavLink>
           </div>
           <nav className='flex items-center gap-x-10'>
             {navlist?.map((item) => (

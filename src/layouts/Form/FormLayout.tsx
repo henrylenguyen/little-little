@@ -2,7 +2,6 @@ import formCenter from 'assets/images/Vector.png'
 import React from 'react'
 import FormLeft from './FormLeft'
 import FormRight from './FormRight'
-import ballon5 from 'assets/images/18451 [Converted]-05 1.png'
 
 type Props = {
   contentLeft: React.ReactNode
@@ -31,8 +30,8 @@ const FormLayout = ({
           {contentRight}
         </FormRight>
 
-        <div className='absolute right-[33.5%] top-0 '>
-          <img src={formCenter} alt='' className=' h-[520px]' />
+        <div className='absolute right-[32.5%] top-0 '>
+          <img src={formCenter} alt='' className=' h-[595px]' />
         </div>
       </div>
     </>

@@ -1,8 +1,11 @@
 import FormLeft from 'layouts/Form/FormLeft'
 import React from 'react'
-import contactImage from 'assets/images/contact.svg'
 import Form from 'components/form/Form'
 import ContactPageFields from 'constants/fields/ContactPage.fields'
+import address from 'assets/images/adress 1.svg'
+import email from 'assets/images/mail-inbox-app 1.svg'
+import phone from 'assets/images/telephone 2.svg'
+import ContainerContact from 'components/ContainerContact'
 type Props = {}
 
 const ContactPage = (props: Props) => {
@@ -27,9 +30,29 @@ const ContactPage = (props: Props) => {
           ></Form>
         </FormLeft>
         <div className='flex  flex-col justify-between'>
-          <img src={contactImage} alt='' className='w-full' />
-          <img src={contactImage} alt='' className='w-full' />
-          <img src={contactImage} alt='' className='w-full' />
+          <ContainerContact>
+            <img src={address} className='w-[30px]' alt='' />
+            <div className=''>
+              <h4 className='text-[18px] font-semibold text-[#12265A]'>Địa chỉ:</h4>
+              <p className='text-[13px] font-medium text-textLightColor'>
+                86/33 Âu Cơ, Phường 9, Quận Tân Bình, TP. Hồ Chí Minh
+              </p>
+            </div>
+          </ContainerContact>
+          <ContainerContact>
+            <img src={email} className='w-[30px]' alt='' />
+            <div className=''>
+              <h4 className='text-[18px] font-semibold text-[#12265A]'>Email:</h4>
+              <p className='text-[13px] font-medium text-textLightColor'>investigate@your-site.com</p>
+            </div>
+          </ContainerContact>
+          <ContainerContact>
+            <img src={phone} className='w-[30px]' alt='' />
+            <div className=''>
+              <h4 className='text-[18px] font-semibold text-[#12265A]'>Điện thoại:</h4>
+              <p className='text-[13px] font-medium text-textLightColor'>+84 145 689 798</p>
+            </div>
+          </ContainerContact>
         </div>
       </div>
     </div>

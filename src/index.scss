@@ -112,3 +112,11 @@ button {
 .title{
   @apply text-center font-secondFont text-[72px] font-[900] leading-[80px] text-textSecondColor 
 }
+.bgImage{
+  background-image: url(assets/images/contact.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 20px;
+  width: 250px;
+  min-height: 100px;
+}

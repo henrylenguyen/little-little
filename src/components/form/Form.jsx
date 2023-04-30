@@ -34,6 +34,9 @@ const Form = ({ schema, fields, handleSubmitForm, title, initialValues, gap, col
         {newFields?.length > 0
           ? newFields?.map(({ name, type, placeholder, onChange, ...rest }) => (
               <div key={name} className='flex flex-col gap-3'>
+                <label className={`mb-2 block font-medium ${color}`} htmlFor={name}>
+                  {rest.label}
+                </label>
                 {type === 'select' ? (
                   <Dropdown
                     control={control}
@@ -64,6 +67,7 @@ const Form = ({ schema, fields, handleSubmitForm, title, initialValues, gap, col
                     className={`${
                       errors[name] ? 'border-red-500 border' : 'border-gray-300 border'
                     } focus:border-blue-400 focus:ring-blue-400  text-black mt-2 block w-full rounded-md  px-3 py-2 focus:outline-none focus:ring-2`}
+                    {...rest}
                   />
                 )}
 
@@ -72,6 +76,9 @@ const Form = ({ schema, fields, handleSubmitForm, title, initialValues, gap, col
             ))
           : fields?.map(({ name, type, placeholder, onChange, className, ...rest }) => (
               <div key={name} className={rest?.classNameDiv}>
+                <label className={`mb-2 block font-medium ${color}`} htmlFor={name}>
+                  {rest.label}
+                </label>
                 {type === 'select' ? (
                   onChange ? (
                     <Dropdown
@@ -135,10 +142,16 @@ const Form = ({ schema, fields, handleSubmitForm, title, initialValues, gap, col
                 {errors[name] && <span className='text-red-500 text-sm italic'>{errors[name].message}</span>}
               </div>
             ))}
-        <div className='col-span-3 text-center '>
-          <button type='submit' className='btnPrimary w-[300px]  rounded-2xl p-[10px] text-[20px] shadow-secondShadow'>
-            {rest?.titleButton}
-          </button>
+
+        <div className='col-span-3 mt-10 text-center'>
+          {rest?.titleButton && (
+            <button
+              type='submit'
+              className='btnPrimary w-[300px]  rounded-2xl p-[10px] text-[20px] shadow-secondShadow'
+            >
+              {rest?.titleButton}
+            </button>
+          )}
         </div>
       </form>
     </>
