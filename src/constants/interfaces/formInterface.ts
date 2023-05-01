@@ -5,6 +5,4 @@ export interface IPropsForm {
   LabelImage?: Boolean
   labelContent?: string
 }
-export interface IForm{
-
-}
+export interface IForm {}

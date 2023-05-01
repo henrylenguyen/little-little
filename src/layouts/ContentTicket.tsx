@@ -10,7 +10,7 @@ const ContentTicket = ({ title, dayTime, price }: Props) => {
   return (
     <>
       <div className='flex flex-col gap-1'>
-        <span className='event-caption text-[15px] font-medium  text-[#6C7272]'>{title}</span>
+        <span className='event-caption  text-[15px] font-medium  text-[#6C7272]'>{title}</span>
         <p className='flex gap-x-3 text-[15px] font-medium text-[#444444]'>
           <span>
             <svg

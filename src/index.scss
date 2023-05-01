@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @font-face {
-  font-family: "iCielKoni";
-  src: url("assets/fonts/koni-black.ttf") format("truetype");
+  font-family: 'iCielKoni';
+  src: url('assets/fonts/koni-black.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -50,7 +50,7 @@ button {
   }
 }
 .btnPrimary {
-  @apply  bg-buttonColor font-secondFont  font-[900] text-textSecondColor text-center cursor-pointer;
+  @apply cursor-pointer bg-buttonColor  text-center font-secondFont font-[900] text-textSecondColor;
 }
 .navbar {
   position: relative;
@@ -109,10 +109,10 @@ button {
 .my-text::nth-of-type(5) {
   text-indent: 100px;
 }
-.title{
-  @apply text-center font-secondFont text-[72px] font-[900] leading-[80px] text-textSecondColor 
+.title {
+  @apply text-center font-secondFont text-[72px] font-[900] leading-[80px] text-textSecondColor;
 }
-.bgImage{
+.bgImage {
   background-image: url(assets/images/contact.svg);
   background-size: contain;
   background-repeat: no-repeat;
