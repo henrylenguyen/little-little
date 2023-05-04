@@ -6,12 +6,14 @@ import address from 'assets/images/adress 1.svg'
 import email from 'assets/images/mail-inbox-app 1.svg'
 import phone from 'assets/images/telephone 2.svg'
 import ContainerContact from 'components/ContainerContact'
-import { IContactInfor } from 'constants/interfaces/contact.interface'
+import { IContactForm, IContactInfor } from 'constants/interfaces/contact.interface'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { AppDispatch } from 'reduxs/configureStore'
-import { fetchgetContactInfor } from 'thunks/contactThunk'
+import { fetchAddContact, fetchgetContactInfor } from 'thunks/contactThunk'
 import Skeleton from 'react-loading-skeleton'
+import { contactSchema } from 'constants/schemas/contact.schema'
+import { message } from 'antd'
 type Props = {}
 
 const ContactPage = (props: Props) => {
@@ -21,7 +23,6 @@ const ContactPage = (props: Props) => {
     phone: '',
     description: ''
   })
-  console.log('file: ContactPage.tsx:23 ~ contactInfor:', contactInfor)
   const dispatch = useDispatch<AppDispatch>()
   useEffect(() => {
     const fetchData = async () => {
@@ -31,7 +32,13 @@ const ContactPage = (props: Props) => {
     fetchData()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-
+  const handleSubmitForm = (data: IContactForm) => {
+    const fetchRes = async () => {
+      const res = await dispatch(fetchAddContact(data))
+      message.success(`${res} Vui lòng kiên nhẫn đợi phản hồi từ chúng tôi, bạn nhé!`)
+    }
+    fetchRes()
+  }
   return (
     <div>
       {contactInfor.address === '' ? (
@@ -85,9 +92,9 @@ const ContactPage = (props: Props) => {
             <FormLeft>
               <p>{contactInfor.description}</p>
               <Form
-                schema={undefined}
+                schema={contactSchema}
                 fields={ContactPageFields}
-                handleSubmitForm={undefined}
+                handleSubmitForm={handleSubmitForm}
                 title={''}
                 initialValues={undefined}
                 gap={'24px'}

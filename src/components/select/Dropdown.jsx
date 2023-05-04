@@ -1,21 +1,8 @@
 import React from 'react'
 import Select from 'react-select'
 import { useController } from 'react-hook-form'
-import { IControl } from 'constants/interfaces/control.interface'
 
-interface IDropdown extends IControl {
-  options: {
-    label: string
-    value: string
-  }[]
-  defaultValue?: {
-    label: string
-    value: string
-  }
-  SelectOption?: (selectedOption: any) => void
-}
-
-const Dropdown: React.FC<IDropdown> = ({ control, name, options, ...props }) => {
+const Dropdown = ({ control, name, options, ...props }) => {
   const {
     field: { value, onChange }
   } = useController({
