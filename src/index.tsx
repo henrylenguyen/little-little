@@ -12,6 +12,7 @@ import 'swiper/css/pagination'
 import 'swiper/css/grid'
 import 'swiper/css/navigation'
 import 'react-loading-skeleton/dist/skeleton.css'
+import 'react-toastify/dist/ReactToastify.css'
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <Provider store={store}>

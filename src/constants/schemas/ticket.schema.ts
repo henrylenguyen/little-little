@@ -2,7 +2,7 @@ import * as yup from 'yup'
 const ticketSchema = yup
   .object()
   .shape({
-    nameTicket: yup.string().required('Bạn vui lòng chọn loại vé'),
+    ticketRef: yup.string().required('Bạn vui lòng chọn loại vé'),
     amount: yup.string().required('Bạn vui lòng nhập số lượng vé cần mua'),
     expiry: yup.string().required('Ngày sử dụng vé là bắt buộc'),
     name: yup

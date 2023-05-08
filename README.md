@@ -9,8 +9,8 @@
 - **layouts:** Nơi chứa layout khác
 - **pages:** Nơi chứa các của pages, ví dụ: Home, Contact,...
 - **routes:** Nơi chứa các routes của dự án
-- **reduxs:** Nơi chứa các mục redux của dự án 
-    - Slice là mục chứa các tệp liên quan đến redux toolkit 
+- **reduxs:** Nơi chứa các mục redux của dự án
+  - Slice là mục chứa các tệp liên quan đến redux toolkit
 - **utils:** Nơi chứa các hàm xử lý logic chung
 - **schemas:** Nơi chứa schema dùng để xử lý validation
 - **thunks:** Nơi chứa các thunk của dự án
@@ -200,6 +200,7 @@ yarn add -D prettier-plugin-tailwindcss
 yarn add @reduxjs/toolkit react-redux
 
 ```
+
 ## install axios (thư viện hỗ trợ thao tác API)
 
 ```
@@ -229,11 +230,13 @@ yarn add @reduxjs/toolkit react-redux
 ```
   yarn add react-hook-form
 ```
+
 ## install yup hook-form (validate với yup dành cho react-hook-form)
 
 ```
   yarn add @hookform/resolvers yup
 ```
+
 ## install swiper (thư viện carousel)
 
 ```
@@ -245,12 +248,12 @@ yarn add @reduxjs/toolkit react-redux
 ```
   yarn add @mui/material @emotion/react @emotion/styled
 ```
+
 ## @mui/icons-material (thư viện icon của MUI)
 
 ```
   yarn add @mui/icons-material
 ```
-
 
 ## install Ant Design
 
@@ -282,6 +285,7 @@ yarn add @reduxjs/toolkit react-redux
 yarn add react-select
 
 ```
+
 ## Ck editor (hỗ trợ viết văn bản)
 
 ```
@@ -296,7 +300,8 @@ yarn add react-select
 ```
 
 ## @mui/lab
-``` 
+
+```
 yarn add @mui/lab
 ```
 
@@ -304,4 +309,21 @@ yarn add @mui/lab
 
 ```
   yarn add @mui/x-date-pickers
+```
+
+## react-toastify (thông báo dạng toast)
+
+```
+yarn add react-toastify
+```
+## jspdf (thư viện xuất ra file PDF)
+
+```
+yarn add jspdf
+```
+
+## html2canvas file-saver (thư viện chụp ảnh màn hình)
+
+```
+yarn add html2canvas file-saver
 ```

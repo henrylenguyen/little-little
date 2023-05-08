@@ -1,43 +1,49 @@
+
 export const TicketFields = [
   {
     label: 'Số tiền thanh toán',
-    name: 'soTienThanhToan',
+    name: 'paymentAmount',
     type: 'text',
     placeholder: 'Số tiền thanh toán',
     className: 'rounded-[16px] p-[15px] bg-white shadow-primaryShadow w-full',
-    classNameDiv: 'col-span-1 w-full'
+    classNameDiv: 'col-span-1 w-full',
+    readOnly: 'true'
   },
   {
     label: 'Số lượng vé',
-    name: 'SLVe',
+    name: 'amount',
     type: 'text',
     placeholder: 'Số lượng vé',
     className: 'rounded-[16px] p-[15px] bg-white shadow-primaryShadow w-full',
-    classNameDiv: 'col-span-1 w-full'
+    classNameDiv: 'col-span-1 w-full',
+    readOnly: 'true'
   },
   {
     label: 'Ngày sử dụng',
-    name: 'ngaySuDung',
+    name: 'expiry',
     type: 'text',
     placeholder: 'Ngày sử dụng',
     className: 'rounded-[16px] p-[15px] bg-white shadow-primaryShadow w-full',
-    classNameDiv: 'col-span-1 w-full'
+    classNameDiv: 'col-span-1 w-full',
+    readOnly: 'true'
   },
   {
     label: 'Thông tin liên hệ',
-    name: 'hoTen',
+    name: 'name',
     type: 'text',
     placeholder: 'Họ và tên',
     className: 'rounded-[16px] p-[15px] bg-white shadow-primaryShadow w-full',
-    classNameDiv: 'col-span-3 w-[400px]'
+    classNameDiv: 'col-span-3 w-[400px]',
+    readOnly: 'true'
   },
   {
     label: 'Điện thoại',
-    name: 'soDT',
+    name: 'phone',
     type: 'text',
     placeholder: 'Số điện thoại',
     className: 'rounded-[16px] p-[15px] bg-white shadow-primaryShadow w-full',
-    classNameDiv: 'col-span-3 w-[250px]'
+    classNameDiv: 'col-span-3 w-[250px]',
+    readOnly: 'true'
   },
   {
     label: 'Email',
@@ -45,14 +51,15 @@ export const TicketFields = [
     type: 'email',
     placeholder: 'Địa chỉ email',
     className: 'rounded-[16px] p-[15px] bg-white shadow-primaryShadow w-full',
-    classNameDiv: 'col-span-3 w-[400px]'
+    classNameDiv: 'col-span-3 w-[400px]',
+    readOnly: 'true'
   }
 ]
 
 export const PaymentFields = [
   {
     label: 'Số thẻ',
-    name: 'soThe',
+    name: 'cardNumber',
     type: 'text',
     placeholder: 'Số thẻ',
     className: 'rounded-[16px] p-[15px] bg-white shadow-primaryShadow w-full',
@@ -60,7 +67,7 @@ export const PaymentFields = [
   },
   {
     label: 'Họ tên chủ thẻ',
-    name: 'chuThe',
+    name: 'name',
     type: 'text',
     placeholder: 'Họ tên chủ thẻ',
     className: 'rounded-[16px] p-[15px] bg-white shadow-primaryShadow w-full',
@@ -68,7 +75,7 @@ export const PaymentFields = [
   },
   {
     label: 'Ngày hết hạn',
-    name: 'ngayHH',
+    name: 'expiry',
     type: 'text',
     placeholder: 'Ngày hết hạn',
     className: 'rounded-[16px] p-[15px] bg-white shadow-primaryShadow w-full',

@@ -42,7 +42,7 @@ const Form = ({ schema, fields, handleSubmitForm, gap, color = 'text-gray-700', 
       <form onSubmit={handleSubmit(onSubmit)} className={`mt-2 grid grid-cols-3 `} style={{ gap: gap }}>
         {newFields?.length > 0
           ? newFields?.map(({ name, type, placeholder, onChange, className, ...rest }) => (
-              <div key={name} className='flex flex-col gap-3'>
+              <div key={name} className={rest?.classNameDiv}>
                 <label className={`mb-2 block font-medium ${color}`} htmlFor={name}>
                   {rest?.label}
                 </label>
@@ -86,7 +86,7 @@ const Form = ({ schema, fields, handleSubmitForm, gap, color = 'text-gray-700', 
                     name={name}
                     defaultValue={rest?.value}
                     className={`${errors[name] ? 'border border-buttonColor' : ''} ${className}`}
-                    {...rest}
+                    readOnly={rest?.readOnly}
                   />
                 )}
 
@@ -148,7 +148,7 @@ const Form = ({ schema, fields, handleSubmitForm, gap, color = 'text-gray-700', 
                     {...register(name)}
                     name={name}
                     className={`${errors[name] ? 'border border-buttonColor ' : ''} ${className} `}
-                    min={0}
+                    min={1}
                     max={10}
                   />
                 ) : type === 'textarea' ? (

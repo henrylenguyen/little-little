@@ -62,7 +62,10 @@ button {
   border: 1px solid transparent;
 }
 .container-layout {
+  margin-bottom: 2rem;
   background-image: url(assets/images/bg.png);
+   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .css-b62m3t-container {
@@ -120,3 +123,7 @@ button {
   width: 250px;
   min-height: 100px;
 }
+
+// .modal-box{
+//   animation:
+// }

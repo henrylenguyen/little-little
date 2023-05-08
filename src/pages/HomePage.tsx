@@ -17,6 +17,7 @@ import { GetTicketInfor, changeNameTicket } from 'reduxs/slice/ticketSlice'
 import formatPrice from 'utils/formatMoney'
 import moment from 'moment'
 import { ITicketInforState } from 'constants/interfaces/ticket.interface'
+import { useNavigate } from 'react-router-dom'
 
 interface IProps {
   contentLeft?: React.ReactNode
@@ -33,14 +34,17 @@ const HomePage: React.FC<IProps> = React.memo(() => {
   useEffect(() => {
     dispatch(fetchGetTicketInfor())
   }, [dispatch])
-
+  const navigate = useNavigate()
   const handleChangeName = (data: any) => {
     dispatch(changeNameTicket(data))
   }
   const handleSubmitForm = (data: ITicketInforState) => {
     console.log(data)
-    const expiry = moment(data.expiry)
-    // dispatch(GetTicketInfor())
+    data.expiry = moment(data.expiry).format('DD/MM/YYYY')
+    data.amount = Number(data.amount)
+    data.paymentAmount = ticketDescription?.priceTicket && ticketDescription.priceTicket * data.amount
+    dispatch(GetTicketInfor(data))
+    navigate('/payment')
   }
   const [serviceOptions, setServiceOptions] = useState<{ label: string; value: string }[]>([])
   useEffect(() => {
@@ -53,7 +57,7 @@ const HomePage: React.FC<IProps> = React.memo(() => {
 
   const HomePageFields = [
     {
-      name: 'nameTicket',
+      name: 'ticketRef',
       type: 'select',
       options: serviceOptions,
       className: 'rounded-[16px] p-[10px] w-full shadow-primaryShadow',
