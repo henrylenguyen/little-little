@@ -53,10 +53,8 @@ button {
   @apply cursor-pointer bg-buttonColor  text-center font-secondFont font-[900] text-textSecondColor;
 }
 .navbar {
-  position: relative;
   clip-path: polygon(50% 0%, 100% 0, 100% 80%, 70% 100%, 30% 100%, 0 80%, 0 0);
 
-  // filter: drop-shadow(0px 4px 35px rgba(161, 58, 0, 0.75));
 }
 .border-nav {
   border: 1px solid transparent;
@@ -66,8 +64,19 @@ button {
   background-image: url(assets/images/bg.png);
    background-size: cover;
   background-repeat: no-repeat;
+  padding-bottom: 8rem;
+  
 }
-
+.notSp{
+  @media screen and (min-width: 1500px) {
+    display: none!important
+  }
+}
+.bgError{
+    @media screen and (min-width: 1500px) {
+    display: flex!important;
+  }
+}
 .css-b62m3t-container {
   background: white;
 }
@@ -123,7 +132,16 @@ button {
   width: 250px;
   min-height: 100px;
 }
-
-// .modal-box{
-//   animation:
-// }
+.swiper-button-prev,.swiper-button-next
+{
+  width: 50px!important;
+  height: 50px!important;
+  background: #FFDE32;
+  box-shadow: 0 5px 0 0 #FFCE6F;
+  border-radius: 10px;
+}
+.swiper-button-prev::after,.swiper-button-next::after
+{
+  font-size: 25px!important;
+  color: white
+}

@@ -7,6 +7,10 @@ import { fetchgetEventList } from 'thunks/eventThunk'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Autoplay, Keyboard } from 'swiper'
 import Skeleton from 'react-loading-skeleton'
+import bgEvent from 'assets/images/bgEvent.svg'
+import iconLeft from 'assets/images/iconBGLeft.svg'
+import iconRight from 'assets/images/iconBGRight.svg'
+
 type Props = {}
 
 const EventPage = (props: Props) => {
@@ -63,14 +67,13 @@ const EventPage = (props: Props) => {
           </div>
         </>
       ) : (
-        <>
-          {' '}
+        <div className='relative z-10'>
           <h2 className='title mb-14'>sự kiện nổi bật</h2>
           <Swiper
             grabCursor={true}
             centeredSlides={true}
             spaceBetween={50}
-            slidesPerView={2}
+            slidesPerView={3}
             loop={true}
             keyboard={{
               enabled: true
@@ -97,7 +100,10 @@ const EventPage = (props: Props) => {
               </SwiperSlide>
             ))}
           </Swiper>
-        </>
+          <img src={bgEvent} alt='bgEvent' className='bg-cover absolute inset-0 -top-[20%] z-0 h-screen w-full' />
+          <img src={iconLeft} alt='' className='absolute top-[-6%] left-[-3%] w-[400px]' />
+          <img src={iconRight} alt='' className='absolute right-[-3%] top-[-6%] w-[400px]' />
+        </div>
       )}
     </div>
   )
