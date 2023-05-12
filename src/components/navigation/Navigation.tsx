@@ -28,7 +28,7 @@ const Navigation = (props: Props) => {
   const navStyle =
     'px-[24px] transition border py-[10px] text-[18px] font-[700] leading-[22px] text-textSecondColor rounded-[30px]'
   return (
-    <div className='navbar relative w-full bg-[#ED7200] '>
+    <div className='navbar relative z-50 w-full bg-[#ED7200] '>
       <div className=' shadow-2xl w-full py-5'>
         <div className='container flex items-center justify-around'>
           <div className='logo'>

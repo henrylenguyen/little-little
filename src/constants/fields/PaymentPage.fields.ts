@@ -1,4 +1,3 @@
-
 export const TicketFields = [
   {
     label: 'Số tiền thanh toán',

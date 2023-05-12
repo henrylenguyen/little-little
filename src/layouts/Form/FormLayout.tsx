@@ -30,8 +30,8 @@ const FormLayout = ({
           {contentRight}
         </FormRight>
 
-        <div className='absolute right-[32.5%] top-0 '>
-          <img src={formCenter} alt='' className=' h-[595px]' />
+        <div className='form-center absolute right-[32%] top-0'>
+          <img src={formCenter} alt='' className=' h-[590px]' />
         </div>
       </div>
     </>

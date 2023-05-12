@@ -14,10 +14,13 @@ import sadImage from 'assets/images/sad emoji 1.svg'
 import moment from 'moment'
 import { fetchPaymentTicket } from 'thunks/ticketThunk'
 import { ToastContainer, toast } from 'react-toastify'
+import trini from 'assets/images/Trini_Arnold_Votay1 2.svg'
+import emailjs from 'emailjs-com'
 type Props = {}
 
 const PaymentPage = (props: Props) => {
   const { isLoading, bookedTicketInfor, ticketPaymentInfor } = useSelector((state: RootState) => state.ticket)
+  console.log('file: PaymentPage.tsx:23 ~ bookedTicketInfor:', bookedTicketInfor)
 
   const dispatch = useDispatch<AppDispatch>()
   const [isErrorModalOpen, setIsErrorModalOpen] = useState(false)
@@ -48,6 +51,25 @@ const PaymentPage = (props: Props) => {
           expiry: expiryDate
         })
       )
+
+      // Send the email
+      const ticketInfo = `Cảm ơn bạn đã đặt vé của chúng tôi, thông tin vé của bạn là:\n\nTicket Infor: ${ticketPaymentInfor.content.ticketInfor}\n`
+      const templateParams = {
+        email: bookedTicketInfor.email,
+        subject: 'Thông tin vé',
+        content: ticketInfo
+      }
+
+      emailjs
+        .send('service_8a464ov', 'template_j5sqw4g', templateParams, '2jb07gh_NGOM9SFCo')
+        .then(() => {
+          // Email sent successfully
+          console.log('Email sent')
+        })
+        .catch((error) => {
+          // Error occurred while sending email
+          console.error('Error sending email:', error)
+        })
     }
   }
   const closeErrorModal = () => {
@@ -71,7 +93,7 @@ const PaymentPage = (props: Props) => {
 
   return (
     <>
-      <div>
+      <div className='relative'>
         <h2 className='title '>Thanh toán</h2>
         <div className='mt-28'>
           <FormLayout
@@ -104,6 +126,7 @@ const PaymentPage = (props: Props) => {
             labelContentRight='Thông tin thanh toán'
           ></FormLayout>
         </div>
+        <img src={trini} alt='trini' className='absolute left-[-20%] top-[35%] z-50 w-[260px]' />
       </div>
       <Modal isOpen={isErrorModalOpen} closeModal={closeErrorModal}>
         <div className='h-[400px] w-[472px] overflow-hidden '>

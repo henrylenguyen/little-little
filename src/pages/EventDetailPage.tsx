@@ -9,6 +9,9 @@ import { IEvent } from 'constants/interfaces/event.interface'
 import formatPrice from 'utils/formatMoney'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Skeleton from 'react-loading-skeleton'
+import bgEvent from 'assets/images/bgEvent.svg'
+import iconLeft from 'assets/images/iconBGLeft.svg'
+import iconRight from 'assets/images/iconBGRight.svg'
 type Props = {}
 
 const EventDetailPage = (props: Props) => {
@@ -58,10 +61,10 @@ const EventDetailPage = (props: Props) => {
         </>
       ) : (
         <>
-          <h2 className='title'>{detail.eventName}</h2>
-          <div className='mt-10 w-full'>
+          <h2 className='title relative z-50'>{detail.eventName}</h2>
+          <div className=' mt-10 w-full'>
             <FormLeft>
-              <div className='flex gap-x-5'>
+              <div className='flex  gap-x-5'>
                 <div className='w-[30%] flex-shrink-0'>
                   <div className='flex flex-col gap-5'>
                     <div className='h-[200px]'>
@@ -79,6 +82,11 @@ const EventDetailPage = (props: Props) => {
                 </div>
               </div>
             </FormLeft>
+            <div className='absolute top-0'>
+              <img src={bgEvent} alt='bgEvent' className='bg-cover   w-full' />
+              <img src={iconLeft} alt='' className='absolute left-[-11%] top-0 w-[400px]' />
+              <img src={iconRight} alt='' className='absolute right-0 top-0 w-[400px]' />
+            </div>
           </div>
         </>
       )}

@@ -16,7 +16,7 @@ export const fetchGetTicketInfor = () => {
   }
 }
 
-export const fetchPaymentTicket = (data:any) => {
+export const fetchPaymentTicket = (data: any) => {
   return async (dispatch: AppDispatch) => {
     try {
       const response = await ticketAPI.ticketPayment(data)

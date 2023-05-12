@@ -40,20 +40,20 @@ export interface ITicketPayment {
   ID: string
   expiry: string
 }
-
+export interface ITicketAPI {
+  id: string
+  name: string
+  email: string
+  phone: string
+  amount: number
+  expiry: string
+  paymentAmount: number
+  ticketInfor?: ITicket
+  ticketPayment?: ITicketPayment[]
+}
 // interface dữ liệu khi đặt vé thành công
 export interface ITicketPaymentSuccess {
   message: string
   datePayment: string
-  content: {
-    id: string
-    name: string
-    email: string
-    phone: string
-    amount: number
-    expiry: string
-    paymentAmount: number
-    ticketInfor: ITicket
-    ticketPayment: ITicketPayment[]
-  }
+  content: ITicketAPI
 }

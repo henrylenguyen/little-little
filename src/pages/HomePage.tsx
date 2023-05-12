@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 
 import FormLayout from 'layouts/Form/FormLayout'
 import CarouselHome from 'layouts/CarouselHome'
-import * as yup from 'yup'
 import Form from 'components/form/Form'
 import Lisa from 'assets/images/Lisa_Arnold_Lay_Do_F2 3.png'
 import ballon5 from 'assets/images/18451 [Converted]-05 1.png'
 import ballon3 from 'assets/images/18451 [Converted]-03 2.png'
 import ballon4 from 'assets/images/18451 [Converted]-04 1.png'
+import ballon6 from 'assets/images/18451 [Converted]-06 1.png'
 import start from 'assets/images/start.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState, AppDispatch } from '../reduxs/configureStore'
@@ -161,8 +161,9 @@ const HomePage: React.FC<IProps> = React.memo(() => {
                     <h3 className='mt-2'>Giá vé: {formatPrice(ticketDescription?.priceTicket)}/vé</h3>
                   )}
                 </div>
-                <img src={Lisa} alt='' className='absolute bottom-[-25%] left-[-10%] w-[200px]' />
+                <img src={Lisa} alt='' className='absolute bottom-[-20%] left-[-26%] w-[250px]' />
                 <img src={ballon4} alt='' className='absolute -bottom-[20%] left-1/2 z-[-1] -translate-x-1/2' />
+                <img src={ballon6} alt='' className='absolute left-[-25%] top-0' />
               </div>
             }
             contentRight={

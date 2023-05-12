@@ -67,14 +67,13 @@ const EventPage = (props: Props) => {
           </div>
         </>
       ) : (
-        <div className='relative z-10'>
+        <div className='relative z-10 select-none'>
           <h2 className='title mb-14'>sự kiện nổi bật</h2>
           <Swiper
             grabCursor={true}
             centeredSlides={true}
             spaceBetween={50}
             slidesPerView={3}
-            loop={true}
             keyboard={{
               enabled: true
             }}
@@ -101,7 +100,7 @@ const EventPage = (props: Props) => {
             ))}
           </Swiper>
           <img src={bgEvent} alt='bgEvent' className='bg-cover absolute inset-0 -top-[20%] z-0 h-screen w-full' />
-          <img src={iconLeft} alt='' className='absolute top-[-6%] left-[-3%] w-[400px]' />
+          <img src={iconLeft} alt='' className='absolute left-[-11%] top-[-6%] w-[400px]' />
           <img src={iconRight} alt='' className='absolute right-[-3%] top-[-6%] w-[400px]' />
         </div>
       )}

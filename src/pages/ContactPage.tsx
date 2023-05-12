@@ -14,6 +14,7 @@ import { fetchAddContact, fetchgetContactInfor } from 'thunks/contactThunk'
 import Skeleton from 'react-loading-skeleton'
 import { contactSchema } from 'constants/schemas/contact.schema'
 import { message } from 'antd'
+import alex from 'assets/images/Alex_AR_Lay_Do shadow 1.svg'
 type Props = {}
 
 const ContactPage = (props: Props) => {
@@ -43,11 +44,10 @@ const ContactPage = (props: Props) => {
     <div>
       {contactInfor.address === '' ? (
         <>
-          {' '}
           <div className='w-full text-center'>
             <Skeleton height={80} width={500} baseColor='#fff' highlightColor='#eee' duration={1} />
           </div>
-          <div className='mt-10 flex gap-x-8 pl-20'>
+          <div className='mt-10 flex gap-x-8'>
             <Skeleton
               height={600}
               width={740}
@@ -88,7 +88,7 @@ const ContactPage = (props: Props) => {
       ) : (
         <>
           <h2 className='title'>Liên hệ </h2>
-          <div className='mt-10 flex gap-x-8 pl-20'>
+          <div className='relative mt-10 flex gap-x-8 pl-32'>
             <FormLeft>
               <p>{contactInfor.description}</p>
               <Form
@@ -124,6 +124,7 @@ const ContactPage = (props: Props) => {
                 </div>
               </ContainerContact>
             </div>
+            <img src={alex} alt='alex' className='absolute left-[-18%] top-10 z-40 ' />
           </div>
         </>
       )}

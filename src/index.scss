@@ -54,7 +54,6 @@ button {
 }
 .navbar {
   clip-path: polygon(50% 0%, 100% 0, 100% 80%, 70% 100%, 30% 100%, 0 80%, 0 0);
-
 }
 .border-nav {
   border: 1px solid transparent;
@@ -62,21 +61,16 @@ button {
 .container-layout {
   margin-bottom: 2rem;
   background-image: url(assets/images/bg.png);
-   background-size: cover;
+  background-size: cover;
   background-repeat: no-repeat;
   padding-bottom: 8rem;
-  
 }
-.notSp{
+.form-center {
   @media screen and (min-width: 1500px) {
-    display: none!important
+    right: 33.5%;
   }
 }
-.bgError{
-    @media screen and (min-width: 1500px) {
-    display: flex!important;
-  }
-}
+
 .css-b62m3t-container {
   background: white;
 }
@@ -132,16 +126,81 @@ button {
   width: 250px;
   min-height: 100px;
 }
-.swiper-button-prev,.swiper-button-next
-{
-  width: 50px!important;
-  height: 50px!important;
-  background: #FFDE32;
-  box-shadow: 0 5px 0 0 #FFCE6F;
+.swiper-button-prev,
+.swiper-button-next {
+  width: 50px !important;
+  height: 50px !important;
+  background: #ffde32;
+  box-shadow: 0 5px 0 0 #ffce6f;
   border-radius: 10px;
 }
-.swiper-button-prev::after,.swiper-button-next::after
-{
-  font-size: 25px!important;
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 25px !important;
+  color: white;
+}
+.css-b62m3t-container{
+  width: 85%;
+  cursor: pointer;
+}
+// nút dropdown của react-select
+.css-1hb7zxy-IndicatorsContainer {
+    cursor: pointer;
+    margin-right: -4rem;
+    background: #FFDE32;
+    border: none;
+    box-shadow: 0 5px 0 0 #ffce6f;
+    border-radius: 10px;
+}
+.css-1hb7zxy-IndicatorsContainer svg{
   color: white
+}
+.css-t3ipsp-control{
+  border-color: none!important;
+  border: none!important;
+  box-shadow: none!important;
+
+}
+
+// css bỏ border của datepicker MUI
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline{
+  border: none!important
+
+}
+.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input{
+  background: white!important;
+  border-radius: 16px;
+  @apply shadow-primaryShadow;
+}
+
+//css button datepicker MUI
+
+.css-1yq5fb3-MuiButtonBase-root-MuiIconButton-root{
+  color: white!important;
+  border: none;
+  background: #FFDE32!important;
+  box-shadow: 0 5px 0 0 #ffce6f;
+  border-radius: 10px!important;
+}
+
+//css lịch của datepicker MUI
+.css-1yllih9-MuiPaper-root-MuiPickersPopper-paper{
+  border-radius: 20px!important;
+}
+// màu label ngày
+.css-rhmlg1-MuiTypography-root-MuiDayCalendar-weekDayLabel{
+  color: #ff8a00 !important;
+}
+.css-7oawqu-MuiButtonBase-root-MuiPickersDay-root{
+  background: #ff8a00!important;
+}
+// nút ngày hiện tại và chọn ngày
+.css-7oawqu-MuiButtonBase-root-MuiPickersDay-root:not(.Mui-selected){
+  border: 1px solid #ff8a00!important;
+  color: white!important;
+}
+.css-1qs309j-MuiButtonBase-root-MuiPickersDay-root.Mui-selected{
+  background: #f83600!important;
+  border: 1px solid #f83600!important;
+  color: white!important;
 }

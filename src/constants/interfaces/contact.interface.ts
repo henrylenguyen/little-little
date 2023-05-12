@@ -9,4 +9,3 @@ export interface IContactForm extends IContactInfor {
   name: string
   message: string
 }
-
